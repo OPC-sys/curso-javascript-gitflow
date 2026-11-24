@@ -34,3 +34,23 @@ function restaurarAtributos() {
     imagen.setAttribute("alt", "Imagen original");
     imagen.setAttribute("title", "Imagen original");
 }
+function cambiarEstilos() {
+    const texto = document.getElementById("textoEstilos");
+
+    texto.style.color = "white";
+    texto.style.backgroundColor = "#1d3557";
+    texto.style.fontSize = "22px";
+    texto.style.padding = "15px";
+    texto.style.borderRadius = "8px";
+}
+
+// Restaura los estilos originales
+function restaurarEstilos() {
+    const texto = document.getElementById("textoEstilos");
+
+    texto.style.color = "";
+    texto.style.backgroundColor = "";
+    texto.style.fontSize = "";
+    texto.style.padding = "";
+    texto.style.borderRadius = "";
+}
