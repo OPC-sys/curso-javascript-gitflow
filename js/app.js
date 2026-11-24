@@ -1,6 +1,6 @@
 // Modifica el contenido del párrafo utilizando textContent
 function cambiarTexto() {
-    document.getElementById("textoEjemplo").textContent =
+    document.getElementById("textoEjemplo").innerHTML =
         "¡Has cambiado el contenido mediante JavaScript!";
 }
 
