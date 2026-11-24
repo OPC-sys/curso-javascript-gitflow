@@ -1,95 +1,436 @@
-	
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de JavaScript</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Memoria - Práctica Git Flow</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            color: #263238;
+            background: #f3f5f9;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.3rem;
+        }
+
+        nav {
+            background: #1e293b;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 30px auto;
+            padding: 0 18px;
+        }
+
+        section {
+            background: white;
+            padding: 28px;
+            margin-bottom: 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #0000000d;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #334155;
+            margin-top: 25px;
+        }
+
+        code {
+            background: #eaf0f8;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #172033;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 7px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .captura {
+            border: 2px dashed #94a3b8;
+            background: #f8fafc;
+            padding: 22px;
+            text-align: center;
+            color: #64748b;
+            margin: 18px 0;
+            border-radius: 7px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        a {
+            color: #2563eb;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Curso de JavaScript</h1>
-        <p>Aprende JavaScript aplicado a las interacciones con HTML</p>
-    </header>
+<header>
+    <h1>Práctica de Git Flow</h1>
+    <p>Desarrollo de una página web mediante control de versiones</p>
+    <p>Memoria del proyecto · CFGS Desarrollo de Aplicaciones Web</p>
+</header>
 
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
+<nav>
+    <a href="#introduccion">Introducción</a>
+    <a href="#teoria">Teoría</a>
+    <a href="#repositorio">Repositorio</a>
+    <a href="#desarrollo">Desarrollo</a>
+    <a href="#release">Release</a>
+    <a href="#hotfix">Hotfix</a>
+    <a href="#conclusion">Conclusiones</a>
+</nav>
 
-    <main>
-        <h2>Bienvenido al curso de JavaScript</h2>
+<main>
 
-        <p>
-            En esta página encontrarás ejemplos prácticos para aprender
-            a utilizar JavaScript y modificar elementos HTML.
-        </p>
+<section id="introduccion">
+    <h2>1. Introducción</h2>
+    <p>
+        El objetivo de esta práctica es aprender a trabajar con Git y GitHub
+        utilizando el modelo de trabajo Git Flow. Para ello se ha desarrollado
+        una página web didáctica que muestra diferentes formas de manipular
+        elementos HTML mediante JavaScript.
+    </p>
+    <p>
+        Durante el proyecto se han creado distintas ramas para simular el
+        trabajo de tres usuarios, desarrollar funcionalidades independientes,
+        integrar los cambios, preparar una versión estable y solucionar
+        un problema mediante un hotfix.
+    </p>
+</section>
 
-        <!-- FEATURE 1: Modificación del contenido HTML -->
-        <section id="contenidoHTML">
-            <h2>Modificación del contenido HTML</h2>
+<section id="teoria">
+    <h2>2. Fundamentos teóricos</h2>
 
-            <p id="textoEjemplo">
-                Este es el contenido original del párrafo.
-            </p>
+    <h3>2.1. ¿Qué es Git?</h3>
+    <p>
+        Git es un sistema de control de versiones distribuido que permite
+        registrar los cambios realizados en los archivos de un proyecto.
+        Facilita recuperar versiones anteriores, comparar modificaciones
+        y trabajar con diferentes ramas.
+    </p>
 
-            <button onclick="cambiarTexto()">
-                Cambiar contenido
-            </button>
+    <h3>2.2. ¿Qué es GitHub?</h3>
+    <p>
+        GitHub es una plataforma que permite alojar repositorios Git en
+        Internet. Facilita compartir proyectos, colaborar con otros
+        desarrolladores y mantener una copia remota del código.
+    </p>
 
-            <button onclick="restaurarTexto()">
-                Restaurar contenido
-            </button>
-        </section>
+    <h3>2.3. Conceptos principales de Git</h3>
+    <ul>
+        <li><strong>Repositorio:</strong> almacena los archivos y el historial del proyecto.</li>
+        <li><strong>Commit:</strong> registra un conjunto de cambios.</li>
+        <li><strong>Rama:</strong> permite trabajar de forma independiente.</li>
+        <li><strong>Merge:</strong> integra los cambios de una rama en otra.</li>
+        <li><strong>Tag:</strong> identifica una versión concreta del proyecto.</li>
+        <li><strong>Push:</strong> envía los cambios al repositorio remoto.</li>
+        <li><strong>Pull:</strong> obtiene e integra cambios del repositorio remoto.</li>
+        <li><strong>Clone:</strong> descarga una copia del repositorio.</li>
+    </ul>
 
-        <!-- FEATURE 2: Modificación de atributos HTML -->
-        <section id="atributosHTML">
-            <h2>Modificación de atributos HTML</h2>
+    <h3>2.4. ¿Qué es Git Flow?</h3>
+    <p>
+        Git Flow es un modelo de organización del trabajo con ramas Git.
+        Establece diferentes ramas según la finalidad de cada tarea,
+        facilitando el desarrollo paralelo y la preparación de versiones.
+    </p>
 
-            <p>En este ejemplo modificaremos los atributos de una imagen.</p>
+    <ul>
+        <li><strong>main:</strong> contiene las versiones estables del proyecto.</li>
+        <li><strong>develop:</strong> reúne las nuevas funcionalidades antes de publicarlas.</li>
+        <li><strong>feature:</strong> se utiliza para desarrollar funcionalidades concretas.</li>
+        <li><strong>release:</strong> prepara una nueva versión estable.</li>
+        <li><strong>hotfix:</strong> permite corregir errores urgentes de una versión publicada.</li>
+    </ul>
 
-            <img id="imagenEjemplo"
-                 src="https://placehold.co/300x150/457b9d/ffffff?text=Imagen+original"
-                 alt="Imagen original"
-                 title="Imagen original">
+    <h3>2.5. ¿Por qué utilizar Git Flow?</h3>
+    <p>
+        Este modelo permite organizar mejor el desarrollo, separar las
+        funcionalidades, evitar modificaciones directas sobre la versión
+        estable y facilitar la colaboración entre varios desarrolladores.
+        También permite identificar las versiones mediante etiquetas
+        y corregir errores sin interrumpir el desarrollo de nuevas funciones.
+    </p>
 
-            <br><br>
+    <div class="captura">
+        ESPACIO PARA CAPTURA: esquema de ramas Git Flow.
+    </div>
+</section>
 
-            <button onclick="cambiarAtributos()">
-                Cambiar atributos
-            </button>
+<section id="repositorio">
+    <h2>3. Creación del repositorio y estructura inicial</h2>
 
-            <button onclick="restaurarAtributos()">
-                Restaurar atributos
-            </button>
-        </section>
+    <p>
+        Se ha utilizado el repositorio de GitHub
+        <a href="https://github.com/OPC-sys/curso-javascript-gitflow">
+        curso-javascript-gitflow</a>.
+    </p>
 
-        <!-- FEATURE 3: Modificación de estilos CSS -->
-        <section id="estilosCSS">
-            <h2>Modificación de estilos CSS</h2>
+    <p>
+        Se creó un README inicial y posteriormente se estableció la rama
+        develop para organizar el desarrollo de las funcionalidades.
+    </p>
 
-            <p id="textoEstilos">
-                Este texto cambiará de apariencia mediante JavaScript.
-            </p>
+    <p>La estructura del proyecto es la siguiente:</p>
 
-            <button onclick="cambiarEstilos()">
-                Cambiar estilos
-            </button>
+    <pre><code>curso-javascript-gitflow/
+├── README.md
+├── index.html
+├── css/
+│   └── estilos.css
+└── js/
+    └── app.js</code></pre>
 
-            <button onclick="restaurarEstilos()">
-                Restaurar estilos
-            </button>
-        </section>
+    <h3>Comandos utilizados</h3>
+    <pre><code>git clone https://github.com/OPC-sys/curso-javascript-gitflow.git
+git switch -c develop</code></pre>
 
-    </main>
+    <p>
+        Para simular tres usuarios diferentes se modificó el nombre
+        de usuario de Git antes de realizar los commits correspondientes.
+    </p>
 
-    <footer>
-        <p>Curso de JavaScript - Sistemas de control de versiones</p>
-    </footer>
+    <div class="captura">
+        ESPACIO PARA CAPTURA: repositorio y estructura inicial.
+    </div>
+</section>
 
-    <script src="js/app.js"></script>
+<section id="desarrollo">
+    <h2>4. Desarrollo de funcionalidades</h2>
+
+    <h3>4.1. Usuario 1: estructura inicial</h3>
+    <p>
+        Se creó la estructura HTML de la página, incluyendo una cabecera,
+        un menú de navegación, el contenido principal y un pie de página.
+        También se prepararon los archivos CSS y JavaScript.
+    </p>
+    <p>
+        Se registró el trabajo mediante el commit:
+        <code>5e5e48c</code>.
+    </p>
+
+    <h3>4.2. Usuario 2: feature/contenidoHTML</h3>
+    <p>
+        Se creó una rama independiente para desarrollar la modificación
+        del contenido de los elementos HTML mediante JavaScript.
+    </p>
+    <p>
+        Se utilizó la propiedad <code>textContent</code> para cambiar
+        el texto de un elemento y restaurar posteriormente su contenido
+        original.
+    </p>
+    <p>
+        Una vez terminada la funcionalidad, se integró en develop mediante
+        un merge.
+    </p>
+    <p>Commits principales: <code>6942db9</code> y <code>2567945</code>.</p>
+
+    <div class="captura">
+        ESPACIO PARA CAPTURA: feature contenidoHTML y su funcionamiento.
+    </div>
+
+    <h3>4.3. Usuario 2: feature/atributosHTML</h3>
+    <p>
+        Se desarrolló una segunda funcionalidad para modificar los atributos
+        de una imagen HTML mediante JavaScript.
+    </p>
+    <p>
+        Se utilizó el método <code>setAttribute()</code> para cambiar
+        atributos como <code>src</code>, <code>alt</code> y
+        <code>title</code>. También se añadió la posibilidad de restaurar
+        los valores originales.
+    </p>
+    <p>
+        La funcionalidad se desarrolló en su propia rama y posteriormente
+        se integró en develop.
+    </p>
+    <p>Commits principales: <code>b7f62b7</code> y <code>ccabc12</code>.</p>
+
+    <div class="captura">
+        ESPACIO PARA CAPTURA: feature atributosHTML y su funcionamiento.
+    </div>
+
+    <h3>4.4. Usuario 3: feature/estilosCSS</h3>
+    <p>
+        Se creó una tercera rama para trabajar con los estilos CSS desde
+        JavaScript.
+    </p>
+    <p>
+        Se modificaron propiedades de estilo de los elementos mediante
+        la propiedad <code>style</code>, permitiendo cambiar su apariencia
+        y restaurar los estilos originales.
+    </p>
+    <p>
+        El código JavaScript incluye comentarios para facilitar la
+        comprensión de las funciones.
+    </p>
+    <p>Commits principales: <code>782efa0</code> y <code>7045731</code>.</p>
+
+    <div class="captura">
+        ESPACIO PARA CAPTURA: feature estilosCSS y su funcionamiento.
+    </div>
+</section>
+
+<section id="release">
+    <h2>5. Preparación de la versión 1.0</h2>
+
+    <p>
+        Después de desarrollar e integrar las tres funcionalidades
+        en develop, se creó la rama release/1.0 para preparar
+        la primera versión del proyecto.
+    </p>
+
+    <p>
+        En esta rama se actualizó el README con información de la versión
+        y se creó la etiqueta anotada v1.0.
+    </p>
+
+    <p>Comandos utilizados:</p>
+
+    <pre><code>git switch develop
+git switch -c release/1.0
+git add README.md
+git commit -m "release(usuario-3): preparar versión 1.0"
+git tag -a v1.0 -m "Versión 1.0"
+git switch main
+git merge --no-ff release/1.0
+git switch develop
+git merge --no-ff release/1.0</code></pre>
+
+    <p>
+        La release se integró tanto en main como en develop.
+        El commit de preparación de la versión fue
+        <code>7c4af6a</code>.
+    </p>
+
+    <div class="captura">
+        ESPACIO PARA CAPTURA: rama release y etiqueta v1.0.
+    </div>
+</section>
+
+<section id="hotfix">
+    <h2>6. Corrección urgente: hotfix</h2>
+
+    <p>
+        Se creó la rama hotfix/mejora-bienvenida a partir de main
+        para corregir el texto de bienvenida de la página.
+    </p>
+
+    <p>
+        Se sustituyó el texto «Bienvenido al curso» por
+        «Bienvenido al curso de JavaScript».
+    </p>
+
+    <p>El cambio se registró con el commit:</p>
+
+    <pre><code>fix(usuario-1): mejorar el texto de bienvenida</code></pre>
+
+    <p>
+        Después, la corrección se integró tanto en main como en develop.
+        Finalmente, se creó la etiqueta anotada v1.0.1 para identificar
+        la versión corregida.
+    </p>
+
+    <pre><code>git switch main
+git merge --no-ff hotfix/mejora-bienvenida
+git tag -a v1.0.1 -m "Corrección de la versión 1.0"
+git switch develop
+git merge --no-ff hotfix/mejora-bienvenida</code></pre>
+
+    <p>
+        El commit de la corrección es <code>0f3f1c1</code> y el merge
+        del hotfix en main es <code>5815509</code>.
+    </p>
+
+    <div class="captura">
+        ESPACIO PARA CAPTURA: cambio de bienvenida y etiqueta v1.0.1.
+    </div>
+</section>
+
+<section id="conclusion">
+    <h2>7. Conclusiones</h2>
+
+    <p>
+        Con esta práctica se ha aprendido a utilizar Git y GitHub para
+        gestionar un proyecto de desarrollo web mediante ramas.
+    </p>
+
+    <p>
+        Se han creado funcionalidades independientes, integrado cambios
+        mediante merge, preparado una versión estable con una release
+        y corregido un error mediante un hotfix.
+    </p>
+
+    <p>
+        También se ha comprobado la importancia de mantener un historial
+        organizado, utilizar commits descriptivos y separar el desarrollo
+        de las versiones estables.
+    </p>
+
+    <p>
+        Git Flow facilita la organización del trabajo y permite simular
+        un entorno de colaboración entre varios desarrolladores.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>Memoria de la práctica Git Flow · Desarrollo de Aplicaciones Web</p>
+</footer>
 
 </body>
 </html>
-
