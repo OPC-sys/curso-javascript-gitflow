@@ -1,0 +1,95 @@
+	
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Curso de JavaScript</h1>
+        <p>Aprende JavaScript aplicado a las interacciones con HTML</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <h2>Bienvenido al curso</h2>
+
+        <p>
+            En esta página encontrarás ejemplos prácticos para aprender
+            a utilizar JavaScript y modificar elementos HTML.
+        </p>
+
+        <!-- FEATURE 1: Modificación del contenido HTML -->
+        <section id="contenidoHTML">
+            <h2>Modificación del contenido HTML</h2>
+
+            <p id="textoEjemplo">
+                Este es el contenido original del párrafo.
+            </p>
+
+            <button onclick="cambiarTexto()">
+                Cambiar contenido
+            </button>
+
+            <button onclick="restaurarTexto()">
+                Restaurar contenido
+            </button>
+        </section>
+
+        <!-- FEATURE 2: Modificación de atributos HTML -->
+        <section id="atributosHTML">
+            <h2>Modificación de atributos HTML</h2>
+
+            <p>En este ejemplo modificaremos los atributos de una imagen.</p>
+
+            <img id="imagenEjemplo"
+                 src="https://placehold.co/300x150/457b9d/ffffff?text=Imagen+original"
+                 alt="Imagen original"
+                 title="Imagen original">
+
+            <br><br>
+
+            <button onclick="cambiarAtributos()">
+                Cambiar atributos
+            </button>
+
+            <button onclick="restaurarAtributos()">
+                Restaurar atributos
+            </button>
+        </section>
+
+        <!-- FEATURE 3: Modificación de estilos CSS -->
+        <section id="estilosCSS">
+            <h2>Modificación de estilos CSS</h2>
+
+            <p id="textoEstilos">
+                Este texto cambiará de apariencia mediante JavaScript.
+            </p>
+
+            <button onclick="cambiarEstilos()">
+                Cambiar estilos
+            </button>
+
+            <button onclick="restaurarEstilos()">
+                Restaurar estilos
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Curso de JavaScript - Sistemas de control de versiones</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+
